@@ -35,6 +35,7 @@ yarn-error.log
 testem.log
 /typings
 /node_modules
+launch.json
 
 # e2e
 /e2e/*.js
