@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="page-header">Add A Meal</h2>
-  <form (submit)="addMeal()">
+  <form (ngSubmit)="addMeal(); mealForm.reset()" #mealForm="ngForm">
     <fieldset>
         <div class="form-group">
             <label for="entree">Entree</label>
@@ -17,8 +17,22 @@
     </fieldset>
     <input type="submit" class="btn btn-success" value="Add"/>
   </form>
+  <hr/>
 
-  <div *ngFor = "let meal of meals">
+  <div class="row">
+    <div class="col-md-3">
+       <h4>Entrees</h4>
+    </div>
+    <div class="col-md-3">
+       <h4>Sides</h4>
+    </div>
+    <div class="col-md-3">
+       <h4>Drinks</h4>
+    </div>
+    
+  </div>
+
+  <div class="row" *ngFor = "let meal of meals">
     <div class="col-md-3">
       {{meal.entree}}
     </div>
@@ -30,6 +44,4 @@
     </div>
     <input type="button" class="btn btn-danger" (click)="deleteMeal(meal._id)" value="Delete"/>
   </div>
-  <br>
-  <br>
 </div>
