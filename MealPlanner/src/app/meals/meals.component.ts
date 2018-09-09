@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MealService } from '../meal.service';
 import { Meal } from '../meal';
-import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-meals',
