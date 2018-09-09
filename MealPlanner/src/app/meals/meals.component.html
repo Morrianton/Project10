@@ -1,3 +1,35 @@
-<p>
-  meals works!
-</p>
+<div class="container">
+  <h2 class="page-header">Add A Meal</h2>
+  <form (submit)="addMeal()">
+    <fieldset>
+        <div class="form-group">
+            <label for="entree">Entree</label>
+            <input type="text" class="form-control" [(ngModel)]="entree" name="entree" aria-describedby="entree" placeholder="Roasted Chicken, Caesar Salad, etc.">
+          </div>
+          <div class="form-group">
+              <label for="side">Side</label>
+              <input type="text" class="form-control" [(ngModel)]="side" name="side" aria-describedby="side" placeholder="Cobb Salad, Mashed Potatoes, etc.">
+            </div>
+            <div class="form-group">
+                <label for="drink">Drink</label>
+                <input type="text" class="form-control" [(ngModel)]="drink" name="drink" aria-describedby="drink" placeholder="Chocolate Milk, Grape Juice, etc.">
+              </div>
+    </fieldset>
+    <input type="submit" class="btn btn-success" value="Add"/>
+  </form>
+
+  <div *ngFor = "let meal of meals">
+    <div class="col-md-3">
+      {{meal.entree}}
+    </div>
+    <div class="col-md-3">
+      {{meal.side}}
+    </div>
+    <div class="col-md-3">
+      {{meal.drink}}
+    </div>
+    <input type="button" class="btn btn-danger" (click) ="deleteMeal(meal.id)" value="Delete"/>
+  </div>
+  <br>
+  <br>
+</div>
