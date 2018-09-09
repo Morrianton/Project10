@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { Meal } from './meal';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -22,7 +21,7 @@ export class MealService {
   {
     let headers = new Headers();
 
-    headers.append('Content-type', 'application/json');
+    headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/api/meal', newMeal, {headers:headers})
       .pipe(map(res => res.json()));
   }
