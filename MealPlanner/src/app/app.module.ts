@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MealsComponent } from './meals/meals.component';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { MealsComponent } from './meals/meals.component';
     MealsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
